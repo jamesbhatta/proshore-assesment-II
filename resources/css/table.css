@@ -1,0 +1,16 @@
+@layer base {
+    .custom-table {
+        @apply table-auto w-full;
+    }
+    .custom-table thead th,
+    .custom-table thead td {
+        @apply py-4 px-5 font-semibold text-left;
+    }
+
+    .custom-table tbody td {
+        @apply py-4 px-5 border-t border-gray-100;
+    }
+    .custom-table.table-hover tbody tr:hover {
+        @apply bg-gray-50;
+    }
+}
