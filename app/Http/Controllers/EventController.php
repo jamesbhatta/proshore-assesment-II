@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Requests\EventRequest;
 use App\Http\Resources\EventResource;
 use App\Models\Event;
+use App\Queries\EventsQuery;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
     public function index()
     {
-        $events = Event::paginate(5);
+        $events = (new EventsQuery)->paginate(request('per_page', 15));
 
         return EventResource::collection($events);
     }

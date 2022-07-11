@@ -26,3 +26,18 @@
         @apply text-white font-semibold;
     }
 }
+
+@layer base {
+    .filter-bar {
+        display: flex;
+    }
+    .filter-bar > button {
+        padding: 5px 15px;
+        background-color: #fff;
+        color: $313147;
+    }
+    .filter-bar > button.active {
+        background-color: #7000ea;
+        color: #fff;
+    }
+}
