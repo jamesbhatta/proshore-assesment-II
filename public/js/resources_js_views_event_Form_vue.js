@@ -154,8 +154,8 @@ __webpack_require__.r(__webpack_exports__);
         var data = response.data.data;
         _this2.event.id = data.id;
         _this2.event.title = data.title;
-        _this2.event.start_date = data.start_date;
-        _this2.event.end_date = data.end_date;
+        _this2.event.start_date = new Date(data.start_date).toISOString().split('T')[0];
+        _this2.event.end_date = new Date(data.end_date).toISOString().split('T')[0];
         _this2.event.description = data.description;
       })["catch"](function (error) {
         console.log(error);
@@ -284,20 +284,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = ["for"];
+var _hoisted_1 = {
+  key: 0,
+  "class": "form-label"
+};
 var _hoisted_2 = ["type", "value"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_form_group = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("form-group");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_form_group, null, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [$props.label ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("label", {
-        key: 0,
-        "class": "form-label",
-        "for": _ctx.id
-      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.label) + ":", 9
-      /* TEXT, PROPS */
-      , _hoisted_1)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+      return [$props.label ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("label", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.label) + ":", 1
+      /* TEXT */
+      )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
         type: $props.type,
         "class": "form-input",
         value: $props.modelValue,

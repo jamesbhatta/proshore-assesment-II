@@ -31,6 +31,14 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    getFormattedDate: function getFormattedDate(date) {
+      var options = {
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      };
+      return new Date(date).toLocaleDateString("en-GB", options);
     }
   }
 });
@@ -66,15 +74,35 @@ var _hoisted_5 = {
   "class": "flex items-center gap-5 mb-4"
 };
 var _hoisted_6 = {
-  "class": "text-2xl font-semibold tracking-wide text-indigo-900"
+  "class": "text-2xl font-semibold tracking-wide text-indigo-900 mb-3"
 };
-var _hoisted_7 = {
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "text-gray-500"
+}, "Start Date:", -1
+/* HOISTED */
+);
+
+var _hoisted_8 = {
+  "class": "text-gray-500"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "text-gray-500"
+}, "End Date:", -1
+/* HOISTED */
+);
+
+var _hoisted_10 = {
+  "class": "text-gray-500"
+};
+var _hoisted_11 = {
   "class": "mt-2"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit");
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit");
 
-var _hoisted_9 = ["innerHTML"];
+var _hoisted_13 = ["innerHTML"];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
@@ -94,9 +122,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   })]), $data.loading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_loading_bars)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $data.event ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.event.title), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.event.start_date), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getFormattedDate($data.event.start_date)) + " ", 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_8, "(" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.event.start_date_hr) + ")", 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.getFormattedDate($data.event.end_date)) + " ", 1
+  /* TEXT */
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_10, "(" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.event.end_date_hr) + ")", 1
+  /* TEXT */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
       name: 'events.edit',
       params: {
@@ -106,7 +140,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "btn btn-primary py-1 text-sm"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_8];
+      return [_hoisted_12];
     }),
     _: 1
     /* STABLE */
@@ -117,7 +151,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     innerHTML: $data.event.description
   }, null, 8
   /* PROPS */
-  , _hoisted_9), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"\">\n        <table class=\"table-auto w-full\">\n          <tbody>\n            <tr>\n              <td class=\"py-4 px-5 border-b\">Email</td>\n              <td class=\"py-4 px-5 border-b\">{{ user.email }}</td>\n            </tr>\n            <tr>\n              <td class=\"py-4 px-5 border-b\">Role</td>\n              <td class=\"py-4 px-5 border-b\">{{ user.role_string }}</td>\n            </tr>\n            <tr>\n              <td class=\"py-4 px-5 border-b\">Department</td>\n              <td class=\"py-4 px-5 border-b\">{{ user.department.name }}</td>\n            </tr>\n            <tr>\n              <td class=\"py-4 px-5 border-b\">Salary</td>\n              <td class=\"py-4 px-5 border-b\">{{ user.salary_formatted }}</td>\n            </tr>\n            <tr>\n              <td class=\"py-4 px-5 border-b\">Joining Date</td>\n              <td class=\"py-4 px-5 border-b\">{{ user.joining_date_formatted }}</td>\n            </tr>\n            <tr>\n              <td class=\"py-4 px-5 border-b\">Address</td>\n              <td class=\"py-4 px-5 border-b\">{{ user.address }}</td>\n            </tr>\n            <tr v-if=\"user.department\">\n              <td class=\"py-4 px-5 border-b\">Department</td>\n              <td class=\"py-4 px-5 border-b\">{{ user.department.name }}</td>\n            </tr>\n          </tbody>\n        </table>\n      </div> ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  , _hoisted_13)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),

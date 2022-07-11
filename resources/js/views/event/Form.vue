@@ -100,8 +100,8 @@ export default {
           let data = response.data.data;
           this.event.id = data.id;
           this.event.title = data.title;
-          this.event.start_date = data.start_date;
-          this.event.end_date = data.end_date;
+          this.event.start_date = new Date(data.start_date).toISOString().split('T')[0];
+          this.event.end_date = new Date(data.end_date).toISOString().split('T')[0];
           this.event.description = data.description;
         })
         .catch((error) => {
